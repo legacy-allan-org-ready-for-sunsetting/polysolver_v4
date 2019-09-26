@@ -1,7 +1,7 @@
 cwlVersion: v1.0
 
 class: CommandLineTool
-baseCommand: [ /opt/polysolver/scripts/hla_call_workaround.py ]
+baseCommand: [ python, /opt/polysolver/scripts/hla_call_workaround.py ]
 id: polysolver
 
 requirements:
