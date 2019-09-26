@@ -31,7 +31,7 @@ cp_command = "cp /home/polysolver/scripts/shell_call_hla_type ."
 subprocess.call(cp_command, shell=True)
 
 # replace TMP_DIR with a value set in tmp_dir
-sed_command = "sed -i '171s/TMP_DIR=.*/TMP_DIR=%s/' shell_call_hla_type" % tmp_dir
+sed_command = 'sed -i "171s/TMP_DIR=.*/TMP_DIR=%s/" shell_call_hla_type' % tmp_dir
 subprocess.call(sed_command, shell=True)
 
 # execute shell_call_hla_type with defaults from TEMPO
