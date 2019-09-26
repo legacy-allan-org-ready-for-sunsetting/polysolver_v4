@@ -9,7 +9,7 @@ requirements:
   DockerRequirement: 
     dockerPull: mskcc/polysolver:v4
   ResourceRequirement:
-    ramMin: 1000
+    ramMin: 10000
     coresMin: 8
 
 inputs:
