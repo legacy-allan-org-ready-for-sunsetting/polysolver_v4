@@ -2,6 +2,13 @@ import sys, os
 import argparse
 import subprocess
 
+def make_dir(path):
+  try:
+    os.makedirs(path)
+  except OSError as e:
+    if e.errno != errno.EEXIST:
+      raise
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--TMP_DIR", required=True)
 parser.add_argument("--bamNormal", required=True)
@@ -14,6 +21,9 @@ tmp_dir = args.TMP_DIR
 normal_bam = args.bamNormal
 output_dir = args.outputDir
 output_prefix = args.outputPrefix
+
+make_dir(output_dir)
+make_dir(tmp_dir)
 
 # copy shell_call_hla_type to current working directory
 cp_command = "cp /home/polysolver/scripts/shell_call_hla_type ."
