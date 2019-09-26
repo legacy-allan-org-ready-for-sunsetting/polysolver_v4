@@ -37,7 +37,7 @@ inputs:
 
 outputs:
   output:
-    type: File
+    type: File?
     outputBinding:
       glob: |
         ${
