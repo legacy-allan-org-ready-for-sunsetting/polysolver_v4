@@ -41,5 +41,5 @@ outputs:
     outputBinding:
       glob: |
         ${
-          return inputs.output_prefix + ".hla.txt";
+          return inputs.output_dir + "/" + inputs.output_prefix + ".hla.txt";
         }
