@@ -1,0 +1,6 @@
+bam_normal:
+    class: File
+    path: default/file/path
+output_dir: default_string
+output_prefix: default_string
+tmp_dir: default_string
