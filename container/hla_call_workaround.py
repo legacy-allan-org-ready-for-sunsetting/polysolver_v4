@@ -31,7 +31,7 @@ cp_command = "cp /home/polysolver/scripts/shell_call_hla_type ."
 subprocess.call(cp_command, shell=True)
 
 # replace TMP_DIR with a value set in tmp_dir
-sed_command = 'sed -i "171s/TMP_DIR=.*/TMP_DIR=%s/" shell_call_hla_type' % tmp_dir
+sed_command = 'sed -i "171s@TMP_DIR=.*@TMP_DIR=%s@" shell_call_hla_type' % tmp_dir
 subprocess.call(sed_command, shell=True)
 
 # execute shell_call_hla_type with defaults from TEMPO
@@ -48,5 +48,6 @@ exec_cmd = " ".join(execute_cmd_list)
 subprocess.call(exec_cmd, shell=True)
 
 # format output prefix
-mv_command = "mv winners.hla.txt %s.hla.txt" % output_prefix
+winners_txt = os.path.join(output_dir, "winners.hla.txt")
+mv_command = "mv %s %s.hla.txt" % (winners_txt, output_prefix)
 subprocess.call(mv_command, shell=True)
